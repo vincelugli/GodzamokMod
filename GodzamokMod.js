@@ -6,7 +6,7 @@ GodzamokAuto.sellItems = function (maxSale, shouldSkipGrandma = true) {
     document.getElementById('storeBulkSell').click();
     document.getElementById('storeBulkMax').click();
     
-    for (let i = 0; i < maxSale; i++) {
+    for (let i = 0; i <= maxSale; i++) {
         if (i === 1 && shouldSkipGrandma) {
             continue;
         }
@@ -19,13 +19,13 @@ GodzamokAuto.sellItems = function (maxSale, shouldSkipGrandma = true) {
     }
 }
 
-GodzamokAuto.buyBackItems = function (maxSale) {
+GodzamokAuto.buyBackItems = function () {
     document.getElementById('storeBulkBuy').click();
     const buy100 = document.getElementById('storeBulk100');
     const buy10 = document.getElementById('storeBulk10');
     const buy1 = document.getElementById('storeBulk1');
 
-    for (let i = 0; i < GodzamokAuto.itemsSold.length; i++) {
+    for (let i = 0; i <= GodzamokAuto.itemsSold.length; i++) {
         const itemElement = document.getElementById(`product${i}`);
 
         buy100.click();
@@ -53,7 +53,7 @@ document.onkeyup = function(e) {
         }
 
         if (e.shiftKey) {
-            GodzamokAuto.buyBackItems(numberPressed);
+            GodzamokAuto.buyBackItems();
         }
         else {
             GodzamokAuto.sellItems(numberPressed);
