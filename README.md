@@ -7,7 +7,7 @@ Create a bookmark and add the following as the URL.
 
 ```
 javascript: (function () {
-	Game.LoadMod('https://raw.githubusercontent.com/vincelugli/GodzamokMod/master/GodzamokAutoSellAndBuy.js');
+	Game.LoadMod('https://vincelugli.github.io/GodzamokMod/GodzamokAutoSellAndBuy.js');
 }());
 ```
 
@@ -15,7 +15,7 @@ Alternatively, you can run the follow function from dev tools console.
 
 ```
 (function () {
-	Game.LoadMod('https://raw.githubusercontent.com/vincelugli/GodzamokMod/master/GodzamokAutoSellAndBuy.js');
+	Game.LoadMod('https://vincelugli.github.io/GodzamokMod/GodzamokAutoSellAndBuy.js');
 }());
 ```
 

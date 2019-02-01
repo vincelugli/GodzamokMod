@@ -12,7 +12,7 @@ GodzamokAuto.sellItems = function (maxSale, shouldSkipGrandma = true) {
         }
 
         const numberOfItems = document.getElementById(`productOwned${i}`).innerHTML;
-        itemsSold[i] = numberOfItems;
+        GodzamokAuto.itemsSold[i] = numberOfItems;
 
         // click item to sell all
         document.getElementById(`product${i}`).click();
@@ -25,7 +25,7 @@ GodzamokAuto.buyBackItems = function (maxSale) {
     const buy10 = document.getElementById('storeBulk10');
     const buy1 = document.getElementById('storeBulk1');
 
-    for (let i = 0; i < itemsSold.length; i++) {
+    for (let i = 0; i < GodzamokAuto.itemsSold.length; i++) {
         const itemElement = document.getElementById(`product${i}`);
 
         buy100.click();
@@ -38,9 +38,9 @@ GodzamokAuto.buyBackItems = function (maxSale) {
 }
 
 GodzamokAuto.buyUntilN = function (element, n, i) {
-    while (itemsSold[i] >= n) {
+    while (GodzamokAuto.itemsSold[i] >= n) {
         element.click();
-        itemsSold[i] -= n;
+        GodzamokAuto.itemsSold[i] -= n;
     }
 }
 
