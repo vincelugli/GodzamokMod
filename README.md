@@ -21,6 +21,6 @@ Alternatively, you can run the follow function from dev tools console.
 
 ## How to use
 
-Once the mod is loaded, press Ctrl + a number to sell all builds (except grandmas) at and below that level. For example, `Ctrl + 5` will sell all Cursors, Farms, Mines, and Factories. `Ctrl + 3` will sell only Cursors, and Farms.
+There will be a checkbox next to each unlocked item. Use these to select which items you want to sell everything to Godzamok!
 
-To re-buy everything, press Ctrl + Shift + the same number. In the same examples above, you would press `Ctrl + Shift + 5` and `Ctrl + Shift + 3`.
+Pressing `s` will sell everything that has been checked, and then pressing `b` will buy it all back.
