@@ -24,3 +24,5 @@ Alternatively, you can run the follow function from dev tools console.
 There will be a checkbox next to each unlocked item. Use these to select which items you want to sell everything to Godzamok!
 
 Pressing `s` will sell everything that has been checked, and then pressing `b` will buy it all back.
+
+What you have checked will also be saved for the next time you load the mod in the game (when using the same local storage)!
