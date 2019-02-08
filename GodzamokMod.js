@@ -98,6 +98,9 @@ GodzamokAuto.init = function() {
 }
 
 document.onkeyup = function(e) {
+    if (e.ctrlKey) {
+        return;
+    }
     if (e.which === 66 /* b */) {
         GodzamokAuto.buyBackItems();
     }
