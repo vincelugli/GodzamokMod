@@ -80,11 +80,36 @@ GodzamokAuto.buyUntilN = function(element, n, i) {
     }
 }
 
-GodzamokAuto.init = function() {
-    GodzamokAuto.backup.loop = Game.Loop;
-    Game.Loop = function() {
-        GodzamokAuto.backup.loop();
+GodzamokAuto.save = function() {
+    const selectedItems = [];
+    for (let i = 0; i <= GodzamokAuto.unlockedElements; i++) {
+        const godzamokCheck = document.getElementById(`GodzamokCheck-${i}`);
 
+        if (godzamokCheck && godzamokCheck.checked) {
+            selectedItems.push(i);
+        }
+    }
+    Game.localStorageSet('GodzamokMod', selectedItems.join(','));
+}
+
+GodzamokAuto.load = function() {
+    const maybeGodzamokeData = Game.localStorageGet('GodzamokMod');
+
+    if (!maybeGodzamokeData) {
+        return;
+    }
+
+    maybeGodzamokeData.split(',')
+        .forEach((index) => {
+            const godzamokCheck = document.getElementById(`GodzamokCheck-${index}`);
+
+            if (godzamokCheck) {
+                godzamokCheck.checked = true;
+            }
+        });
+}
+
+GodzamokAuto.checkToCreateCheckbox = function() {
         // check for new checkboxes to insert into document.
         const unlockedItems = document.getElementsByClassName('product unlocked');
 
@@ -94,7 +119,27 @@ GodzamokAuto.init = function() {
                 GodzamokAuto.unlockedElements++;
             }
         }
+
+}
+
+GodzamokAuto.init = function() {
+    GodzamokAuto.backup.loop = Game.Loop;
+    Game.Loop = function() {
+        GodzamokAuto.backup.loop();
+
+        GodzamokAuto.checkToCreateCheckbox();
     }
+    
+    GodzamokAuto.backup.save = Game.WriteSave;
+    Game.WriteSave = function(type) {
+        GodzamokAuto.backup.save(type);
+
+        GodzamokAuto.save();
+    }
+
+    // Init all checkboxes here in case game loop hasn't run.
+    GodzamokAuto.checkToCreateCheckbox();
+    GodzamokAuto.load();
 }
 
 document.onkeyup = function(e) {
