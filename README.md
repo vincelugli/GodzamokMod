@@ -26,3 +26,5 @@ There will be a checkbox next to each unlocked item. Use these to select which i
 Pressing `s` will sell everything that has been checked, and then pressing `b` will buy it all back.
 
 What you have checked will also be saved for the next time you load the mod in the game (when using the same local storage)!
+
+Adding some random edits to test API!
